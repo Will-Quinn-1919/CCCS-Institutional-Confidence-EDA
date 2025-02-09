@@ -66,10 +66,10 @@ gen age = 2025-yob
 
 // Basic histogram
 
-tabulate confidence_congress
-tabulate confidence_state
-tabulate confidence_police
-tabulate confidence_localgov
+tabulate confidence_congress, col nofeq
+tabulate confidence_state, col nofeq
+tabulate confidence_police, col nofeq
+tabulate confidence_localgov, col nofeq
 
 graph bar (count), over(confidence_localgov, label(angle(45))) title("Local Govt. Confidence Ratings") name(g1, replace)
 graph bar (count), over(confidence_police, label(angle(45))) title("Police Confidence Ratings") name(g2, replace)
