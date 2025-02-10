@@ -1,14 +1,38 @@
-Institutional Confidence Exploratory Data Analysis
+# Institutional Confidence Exploratory Data Analysis
 
-  Confidence in institutions might be one of the most critical identities in assessing the health of a liberal democracy. It is likely not a coincidence that growing alarm over the health of American democracy has coincided with decline in confidence in political institutions. However, it is not just national level institutions that are of import. In Participatory Democracy Revisited Carole Pateman remarks that “Yet in Western countries popular confidence in old-established institutions is fading, voters are disaffected, trust in government is declining and a very wide gap has opened up between citizens and governments and political elites more generally.” (Pateman  15). Furthermore, it is in this article that Pateman argues the necessity for models of democracy that place particular emphasis on enabling increased citizen engagement and participation at the local level. Essentially, Pateman finds that trust in Western democratic institutions is fading and that a lack of vectors for effective participation is a primary concern. 
+## Author
+William Quinn
 
-  The validity of this concern is supported by Social Capital and the Dynamics of Trust in Government in which Luke Keele finds that “trust is an evaluation of politicians and their management of the economy and responds immediately to any changes in government performance. But trust also reflects the lessons learned in civic activity and feelings of personal misanthropy. While changes in social capital will not register an effect on trust immediately, the effect on trust is substantively important” (Keele 251). Keele in this article finds that citizens are far more likely to trust (have confidence) a given institution if they are allowed means of participation. 
+## Course Information
+- **Course:** SOCL 370
+- **Professors:** Dr. David Doherty & Dr. Dana Garbarski
+- **Date:** February 15, 2025
 
-  However, given the size of democracies like America national level participation is impractical. This points to the importance of local institutions as a primary means of participation. Resultingly, it can be understood that the focus of analysis of confidence in democratic institutions should not be restricted to the realm of national level institutions but instead be shifted to the realm of local and state level institutions. 
-This exploratory data analysis will visually summarize institutional confidence levels across Cook County in Congress, the Illinois State Government, local government, and local police in relation to demographic features such as ethnoracial identity, gender, education, and age.
+## Overview
+This project explores confidence in democratic institutions at national, state, and local levels within Cook County. The analysis examines how demographic characteristics such as race, gender, education, and age correlate with institutional confidence levels.
 
-Next Steps
+## Key Findings
+- **Confidence Levels:** Local police enjoy the highest confidence, whereas the U.S. Congress has the lowest.
+- **Statistical Dependence:** Confidence levels across institutions are statistically dependent.
+- **Demographic Trends:**
+  - Congress has slightly higher confidence among Black respondents.
+  - State government enjoys more confidence among female respondents and individuals with graduate degrees.
+  - Partisan divisions show Republicans have higher confidence in Congress, while Democrats and Independents show more confidence in state government.
+  - Confidence levels tend to increase with age and economic stability.
 
-As our data here is primarily categorical it is natural to look to build a logistic regression with dummy variables for all of our demographic variables. We could create a new binomial variable in which we combine groups “Very little” and “Some” against “Quit a lot” and “A great deal” if we wanted to analyze what aspects push someone from a fairly neutral state of “Some” to an explicitly supportive state of “Quite a lot”. We could also combine groups “Some”, “Quit a lot”, and “A great deal” against “Very little” in order to assess what demographic aspects are more likely to be explicitly negative. An advantage of this model is that it would be quite simple and easy to create since such a model would not need to rely on any assumptions of distribution we would not need to worry about transformations as well. However, in reducing our response variable down from four to two categories we will lose some nuance which is not ideal.
- 
-Alternatively, since our four response variables are fairly to highly correlated, we could also use the summarized or mean confidence measures and create a GLM in which we predict mean or summarized confidence against demographic characteristics. This would maintain the nuance we lose in the logistic regression. However, specifying a correct model and underlying distribution while avoiding overfitting may be a challenge. Ultimately, this is likely a more challenging path for model creation but also will likely yield a more powerful model.
+## Next Steps
+1. **Logistic Regression:**
+   - Convert confidence levels into binary categories to assess factors influencing positive vs. negative perceptions.
+   - Grouping: ("Very little" & "Some") vs. ("Quite a lot" & "A great deal").
+2. **Generalized Linear Models (GLM):**
+   - Utilize mean confidence measures to predict confidence levels using demographic variables.
+   - Address challenges in model specification and distributional assumptions.
+
+## Data Source
+- **Cook County Community Survey** (Loyola University Chicago)
+
+## References
+- Pateman, Carole. "Participatory Democracy Revisited." *Perspectives on Politics*, vol. 10, no. 1, 2012, pp. 7–19.
+- Keele, Luke. "Social Capital and the Dynamics of Trust in Government." *American Journal of Political Science*, vol. 51, no. 2, 2007, pp. 241–254.
+- Cook County Community Survey, Loyola University Chicago ([Website](https://cccs.sites.luc.edu/)).
+
